@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NetBird Exit Node Manager
+Comment=Manage NetBird exit nodes from the system tray
+Exec=netbird-exit-node-applet
+Icon=network-wired
+Terminal=false
+Categories=Network;System;
+StartupNotify=false
+NoDisplay=false
+Keywords=netbird;vpn;exit-node;network;
+StartupWMClass=netbird-exit-node-applet

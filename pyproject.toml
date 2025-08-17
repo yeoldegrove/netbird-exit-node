@@ -1,0 +1,44 @@
+[tool.poetry]
+name = "netbird-exit-node"
+version = "0.1.0"
+description = "Query NetBird API for available routes for peers"
+authors = ["yeoldegrove"]
+readme = "README.md"
+packages = [{include = "netbird_exit_node"}]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.31.0"
+click = "^8.1.7"
+windows-curses = {version = "^2.3.0", markers = "sys_platform == 'win32'"}
+# On Unix systems, curses is included in the standard library
+PyQt6 = "^6.6.0"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.0.0"
+isort = "^5.12.0"
+flake8 = "^6.0.0"
+mypy = "^1.5.0"
+pytest = "^7.4.0"
+
+[tool.poetry.scripts]
+netbird-exit-node = "netbird_exit_node.main:main"
+netbird-exit-node-applet = "netbird_exit_node.applet:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py39']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
